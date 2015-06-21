@@ -1,0 +1,77 @@
+@font-face {
+    font-family: custom-body;
+    src: url("../FiraSans-ExtraLight.otf");
+}
+
+.about-me {
+	padding: 100px 120px;
+	font-size: 50px;
+	overflow: auto;
+	background-color: #FFF;
+	border-spacing: 30px;
+}
+
+.about-me .left-content {
+	display:table-cell;
+	width: 50%;
+	box-sizing: border-box;
+}
+
+.about-me .right-content {
+	display:table-cell;
+	width: 50%;
+	box-sizing: border-box;
+	box-shadow: 0px 0px 6px #484848;
+	background-image: url("../images/profile.jpg");
+	background-position: center;
+}
+
+.about-me .content {
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 1.5;
+	letter-spacing: 1px;
+	color: #686868;
+}
+
+.more {
+	margin: 0px 150px 130px 150px;
+	letter-spacing: 1px;
+}
+
+.more .togglebutton {
+	cursor: pointer;
+	padding: 30px 180px;
+	font-size: 38px;
+	background-color: #484D56;
+	color: #FFF;
+	border-radius: 20px;
+	transition: background-color 0.7s ease 0s;
+}
+
+.more .togglebutton:hover {
+	background-color: #3A3D43;
+}
+
+.more .content {
+	margin: 0px 50px;
+	padding: 50px 0px;
+	background-color: #B1AC95;
+}
+
+.more .section-header {
+	position: relative;
+}
+
+.more .timeline {
+	width: 5px;
+	height: 600px;
+	margin-left: auto;
+  	margin-right: auto;
+  	border-radius: 10px;
+  	background-color: white;
+}
+
+.more .toggle {
+	display: none;
+}

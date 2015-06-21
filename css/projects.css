@@ -1,0 +1,70 @@
+@font-face {
+    font-family: custom-body;
+    src: url("../FiraSans-ExtraLight.otf");
+}
+
+.design-philosophy {
+	padding: 100px 120px;
+	font-size: 50px;
+	overflow: auto;
+	background-color: #FFF;
+	border-spacing: 30px;
+}
+
+.design-philosophy .content {
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 1.5;
+	letter-spacing: 1px;
+	color: #686868;
+}
+
+.software {
+	margin: 0px 120px 130px 120px;
+	letter-spacing: 1px;
+}
+
+.software .section-header {
+	padding: 30px 0px;
+	text-align: center;
+	font-size: 38px;
+	background-color: #484D56;
+	color: #FFF;
+	border-radius: 5px;
+	transition: background-color 0.7s ease 0s;
+}
+
+.software .section-header:hover {
+	background-color: #3A3D43;
+}
+
+.software .description {
+	padding: 30px 0px;
+	line-height: 1.5;
+	letter-spacing: 1px;
+	text-align: center;
+	font-size: 16px;
+}
+
+.software .project {
+	display: none;
+	cursor: pointer;
+	margin: 10px 0px;
+	padding: 30px 40px;
+	border-radius: 30px;
+	font-size: 30px;
+	background-color: #D7D4C2;
+	transition: background-color 0.7s ease 0s;
+}
+
+.software .project:hover {
+	background-color: #C6C3B1;
+}
+
+.software .project .title {
+	display: inline-block;
+}
+
+.software .project .description {
+	display: none;
+}

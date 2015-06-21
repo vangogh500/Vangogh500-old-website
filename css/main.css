@@ -1,0 +1,281 @@
+@font-face {
+    font-family: custom;
+    src: url("../raleway_thin-webfont.ttf");
+}
+
+body {
+	margin: 0px;
+	font-family: custom;
+}
+
+.header {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 220px 70px;
+	width: 100%;
+	background-color: #292C32;
+	color: #FFF;
+}
+
+.header .header-left {
+	display: inline-block;
+}
+
+.header a.title {
+	float: left;
+	text-decoration: none;
+	font-size: 50px;
+	letter-spacing: 1px;
+	color: #F8F8F8;
+	transition: color 0.7s ease 0s;
+}
+
+.header a.title:hover {
+	color: #A8A8A8;
+}
+
+.header .subtitle {
+	clear: left;
+	float: right;
+	padding-right: 10px;
+	color: #D8D8D8;
+	font-size: 10px;
+	letter-spacing: 2px;
+}
+
+.header .header-right {
+	float: right;
+	margin-top: -93px;
+}
+
+.header .header-right .speech-bubble {
+	position: relative;
+	margin-left: 80px;
+	margin-bottom: 30px;
+	width: 200px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	font-size: 30px;
+	background-color: #FFF;
+	color: #888888;
+	border-radius: 30px;
+	box-shadow: 5px 5px 0px #A8A8A8;
+	transition: transform 0.7s ease-in-out;	
+}
+
+
+.header .header-right .speech-bubble:after {
+	content: " ";
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	right: 38px;
+	top: 100px;
+	border: 15px solid;
+	border-color: #fff #fff transparent transparent;
+}
+
+.header .header-right ul.social-media li {
+	display: inline-block;
+	padding: 0px 5px;
+}
+
+.header .header-right ul.social-media li a {
+	float: left;
+	display: block;
+	padding: 5px;
+	background-color: #FFF;
+	border-radius: 300px;
+	transition: box-shadow 0.7s ease 0s;
+}
+
+.header .header-right ul.social-media li a:hover {
+	box-shadow: 0px 0px 30px #656B76;
+}
+
+.nav-bar {
+	top: 200px;
+	left: 100px;
+	padding-top: 10px;
+}
+
+.nav-bar ul.nav {
+	display: inline-table;
+	box-sizing : border-box;
+	position: relative;
+	margin: 0px;
+	padding-left: 0px;
+	list-style: none;
+	background: #efefef;
+	border-radius: 5px;
+}
+
+.nav-bar ul.nav li {
+	float: left;
+	width: 80px;
+	margin: 0px;
+	padding: 10px;
+	text-align: center;
+	transition: background-color 0.7s ease 0s;
+}
+
+.nav-bar ul.nav li:hover {
+	background-color: #656B76;
+}
+
+.nav-bar ul.nav li a {
+	display: block;
+	color: #888888;
+	text-decoration: none;
+}
+
+.nav-bar ul.nav li:hover a {
+	color: #D8D8D8;
+}
+
+.nav-bar ul.nav li ul {
+	display: none;
+	border-radius: 0px; padding: 0;
+	position: absolute; top: 100%;
+	margin-left: -10px;
+	list-style: none;
+	background-color: #656B76;
+	transition: opacity 0.7s ease 0s;
+}
+
+.nav-bar ul.nav li ul li {
+	float: none;
+	padding: 10px;
+	position: relative;
+}
+
+@keyframes fadein {
+   0%{
+	opacity:0;
+   }
+   100%{
+	opacity:1;
+   }
+}
+.nav-bar ul.nav li:hover ul {
+	display: block;
+	animation: fadein 1s ease 1;
+}
+
+.nav-bar ul.nav li ul li:hover {
+	background-color: #484D56;
+}
+
+.bottom {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 120px 70px;
+	width: 100%;
+	font-size: 20px;
+	background-color: #292C32;
+	color: #FFF;
+	overflow: auto;
+}
+
+.bottom .elevator {
+	display: table-cell;
+	width: 50%;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.bottom .elevator .speech-bubble {
+	position: relative;
+	margin-left: 60px;
+	margin-bottom: 30px;
+	padding-top: 20px;
+	width: 200px;
+	height: 80px;
+	text-align: center;
+	font-size: 30px;
+	background-color: #FFF;
+	color: #888888;
+	border-radius: 30px;
+	box-shadow: 5px 5px 0px #A8A8A8;
+	transition: transform 0.7s ease-in-out;	
+}
+
+
+.bottom .elevator .speech-bubble:after {
+	content: " ";
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	right: 38px;
+	top: 100px;
+	border: 15px solid;
+	border-color: #fff #fff transparent transparent;
+}
+
+.bottom .elevator .container {
+	margin-left: 230px;
+	cursor: pointer;
+	padding-top: 15px;
+	width: 85px;
+	height: 70px;
+	background-color: #686868;
+	border-radius: 100px;
+	box-shadow: 0px 4px #484848;
+	transition: background-color 0.7s ease 0s, box-shadow 0.7s ease 0s;
+}
+
+.bottom .elevator .container:hover {
+	background-color: #585858;
+}
+
+.bottom .elevator .container:active {
+	background-color: $181818;
+	box-shadow: 0px 0px #292C32;
+}
+
+.bottom .bottom-right {
+	position: relative;
+	display: table-cell;
+	width: 50%;
+	box-sizing: border-box;
+}
+
+.bottom blockquote:before {
+    padding-left: 10px;
+    content: "\201C";
+    font-size: 150px;
+    position: absolute;
+    left: -60px;
+    top: -50px;
+}
+
+.bottom blockquote {
+	font-family: Georgia, serif;
+    font-size: 18px;
+    font-style: italic;
+    margin: 0px auto;
+    padding: 0.35em 40px;
+    line-height: 1.45;
+    position: relative;
+    color: #A19F9F;
+}
+
+.bottom blockquote cite {
+    color: #A19F9F;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+.bottom blockquote cite:before {
+    content: "\2014 \2009";
+}
+
+.bottom .postscript {
+	width: 400px;
+	margin-top: 60px;
+	margin-right: auto;
+	margin-left: auto;
+	color: #A19F9F;
+}
