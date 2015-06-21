@@ -3,7 +3,9 @@ var main = function() {
 	var requri   = 'https://api.github.com/users/' + username + "/repos";
 	processJSON(requri);
 	
-	
+	$('.project').click(function() {
+		
+	});
 };
 
 function processJSON(url) {
