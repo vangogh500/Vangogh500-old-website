@@ -1,15 +1,13 @@
-var main = function() {
-	var username = "vangogh500";
+
+var username = "vangogh500";
+
+var load = function() {
 	var requri   = 'https://api.github.com/users/' + username + "/repos";
-	processJSON(requri);
-	
-	$('.project').click(function() {
-		
-	});
+	requestJSON(requri);
 };
 
-function processJSON(url) {
-    $.getJSON(url, function(json){
+function requestJSON(url) {
+    $.getJSON(url, { sort: "updated" }, function(json){
         makePosts(json);
     });
 }
@@ -21,11 +19,15 @@ function makePosts(repos) {
 	else {
 		var reg = /-/g;
 		$.each(repos, function(index) {
-			var $project = $("<div>", {class: "project"});
-        	var name = repos[index].name;
-        	$project.append(capitalize(name.replace(reg, " ")));
-        	$(".software").append($project);
-        	$project.show("slow");
+			if(index < 5) {
+				var $project = $("<div>", {class: "project"});
+				var $title = $("<div>", {class: "title"});
+        		var name = repos[index].name;
+        		$title.append(capitalize(name.replace(reg, " ")));
+        		$project.append($title);
+        		$(".software").append($project);
+        		$title.show("slow");
+        	}
         });
 	}
 }
@@ -36,4 +38,32 @@ function capitalize(str) {
   });
 }
 
-$(document).ready(main);
+function requestReadMe(url, $proj) {
+     $.ajax({
+     	url: url,
+     	headers: { 'Accept': 'application/vnd.github.html' }
+     }).done(function(readme) {
+     	var $md = $(readme);
+     	$proj.append($md);
+     	$md.slideDown();
+     });
+}
+
+$(document).ready(load);
+
+$(document).on("click", ".software .project .title", function() {
+	var $readme = $(this).next("#readme");
+	if($readme.length) {
+		if($readme.is(":visible")) {
+			$readme.slideUp();
+		}
+		else {
+			$readme.slideDown();
+		}
+	}
+	else {
+		var title = $(this).text();
+		var requri   = 'https://api.github.com/repos/' + username + '/' + title.replace(/ /g, "-") + '/readme';
+		requestReadMe(requri, $(this).parent());
+	}
+});
