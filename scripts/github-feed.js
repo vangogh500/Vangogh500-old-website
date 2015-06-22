@@ -7,7 +7,7 @@ var load = function() {
 };
 
 function requestJSON(url) {
-    $.getJSON(url, { sort: "updated" }, function(json){
+    $.getJSON(url, { sort: "created" }, function(json){
         makePosts(json);
     });
 }
