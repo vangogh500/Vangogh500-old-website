@@ -28,6 +28,7 @@ function makePosts(posts) {
         		$title.append(name);
         		$post.append($title);
         		$(".blog").append($post);
+        		$post.show("slow");
         	}
         });
 	}
@@ -48,7 +49,7 @@ function requestContent(url, $title) {
     		var $content = $("<div>", {class: "content"});
     		$content.append(json.content);
     		$title.parent().append($content);
-    		active = false;
+    		$content.slideDown();
     	});
     }
 }
