@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: custom-body;
     src: url("../FiraSans-ExtraLight.otf");
@@ -46,7 +45,8 @@
 	font-size: 16px;
 }
 
-.section a:not(.anchor) {
+.section a:not(.anchor):not([target=_blank])  {
+	line-height: 2;
 	padding: 4px;
 	border-radius: 12px;
 	text-decoration: none;
@@ -55,7 +55,7 @@
 	transition: background-color 0.7s ease 0s;
 }
 
-.section a:hover {
+.section a:not(.anchor):not([target=_blank]):hover {
 	background-color: #93907D;
 }
 

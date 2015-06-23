@@ -1,8 +1,10 @@
 var main = function() {
 	$('.togglebutton').click(function() {
-		console.log("test");
 		var toggle = $('.toggle');
 		toggle.slideToggle();
+	});
+	
+	$(".scroll").click(function() {
 	});
 };
 
