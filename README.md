@@ -1,7 +1,7 @@
 # Vangogh500.github.io
 
 ##Overview & Design
-Go to the original site: [Link](http://vangogh500.github.io/)
+Go to the [site](http://vangogh500.github.io/)
 
 Vangogh500.github.io contains all of the source code for the personal site: vangogh500.github.io.
 Inspired by a minimalistic theme, the design attempts to present as much content as it can while attempting to maintain a spacious and light appearance.
@@ -14,14 +14,19 @@ The site gets much of its contents dynamically. However, due to the restrictions
 * UI-display for failed fetches
 * UI to retrieve more content dynamically
 
+##Preview
+![alt text](https://raw.githubusercontent.com/vangogh500/Vangogh500.github.io/master/screenshot.png)
+
 
 ##Provided
 ###CSS
-Contains all CSS stylings for the html files provided.
 [Path](css/)
+
+Contains all CSS stylings for the html files provided.
 
 ###Scripts
 [Path](scripts/)
+
 Contains all of the scripts for the site. 
 * github-feed.js - responsible for fetching content from the github api
 * wp-feed.js - responsible for fetching content from the wordpress api
