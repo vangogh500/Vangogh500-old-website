@@ -168,6 +168,29 @@ body {
 	background-color: #484D56;
 }
 
+.header .music-player {
+    width: 427px;
+    height: 25px;
+ 
+    border-radius: 10px;
+ 
+    box-shadow: 0px 0px 13px rgba(0,0,0,.3),inset 0 1px 0px rgba(255,255,255,.2);
+    padding: 10px;
+}
+
+.header .music-player #play {
+	display: inline-block;
+    width: 30; 
+	height: 30; 
+	background-image: url(../images/icons/play.png);
+	background-size: 80px;
+	background-position: -28px -28px;
+}
+
+.header .music-player #seek {
+	margin-bottom: 7px;
+}
+
 .bottom {
 	box-sizing: border-box;
 	margin: 0px;

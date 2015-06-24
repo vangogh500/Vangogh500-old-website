@@ -21,7 +21,7 @@
 	width: 50%;
 	box-sizing: border-box;
 	box-shadow: 0px 0px 6px #484848;
-	background-image: url("../images/profile.jpg");
+	background: url("../images/profile.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 }
