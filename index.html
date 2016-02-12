@@ -1,108 +1,22 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Vangogh500.io | Home</title>
-		<link href='./css/main.css' rel='stylesheet'>
-		<link href='./css/index.css' rel='stylesheet'>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script src='./scripts/main-animations.js'></script>
-		<script src='./scripts/elevator.js'></script>
-		
-	</head>
-	<body>
-		<div class="header">
-			<div class="header-left">
-				<a class="title" href="./index.html">
-					Vangogh500
-				</a>
-				<div class="subtitle">
-					Kai Matsuda
-				</div>
-			</div>
-			<div class="header-right">
-				<div id="speech1" class="speech-bubble">
-					Click on me!
-				</div>
-				<ul class="social-media">
-					<li><a href="https://www.linkedin.com/in/vangogh500"><img src='./images/icons/linkedin.png' height="20"></a></li>
-	    			<li><a href="https://twitter.com/Vangogh500"><img src='./images/icons/twitter.png' height="20"></a></li>
-	    			<li><a href="https://therevisionists.wordpress.com/"><img src='./images/icons/wordpress.png' height="20"></a></li>
-	    			<li><a href="https://soundcloud.com/kaismatsuda"><img src='./images/icons/soundcloud.png' height="40"></a></li>
-	    			<li><a id="speaker1" href="https://github.com/vangogh500"><img src='./images/icons/github.png'></a></li>
-				</ul>
-			</div>
-			<div class="nav-bar">
-				<ul class="nav">
-					<li><a href='./projects.html'>Projects</a>
-						<ul>
-							<li><a class="scroll" href='./projects.html#software'>Software</a></li>
-							<li><a class="scroll" href='./projects.html#music'>Music</a></li>
-	    				</ul>
-	    			</li>
-	    			<li><a href='./blog.html'>Blog</a></li>
-	    			<li><a href='./contact.html'>Contact</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="about-me">
-			<div class="left-content">
-				<div class="section-header">
-					About me
-					<hr>
-				</div>
-				<div class="content">	
-					<p>
-						Born in 1992 in a remote part of Nagano, Japan, I soon found myself living an ordinary American life here in Massachusetts.
-	    				At the age of twelve, I would discover the saxophone, embarking me on a voyage of creativity that I still sail on today.
-	    				The endeavor has lead me far and wide, spending two years at New York University studying Jazz Performance, I soon found myself
-	    				taking a year off; I was unsure about my goals and concerned about my future prospects.
-					</p>
-					<p>
-						Through a bit of soul-searching, I landed at UMass Amherst, and it was at this time that I discovered coding.
-	    				It had everything I loved about music: seemingly infinite creativity on a foundation of rudimentary logic, a mix of academia and art.
-	    				So here I am now, a steadfast devotee to that of creativity, immersed in music and code.
-					</p>
-				</div>
-			</div>
-			<div class="right-content">
-				<div class="profile"></div>
-			</div>	
-		</div>
-		<div class="resume">
-			<div class="section-header">
-				The Resume
-				<hr>
-			</div>
-			<div class="description">
-				The resume is formatted using the LaTeX markup language and rendered as a PDF. You can view the documentation
-				via its <a href="https://github.com/vangogh500/resume">Github page</a>.
-			</div>
-			<div class="content">
-								<div class="shadow-top"></div>
-				<div class="img">
-					<img height="1000px" src="https://raw.githubusercontent.com/vangogh500/resume/master/sample-resume.png"></img>
-				</div>	
-				<a class="download" href="https://raw.githubusercontent.com/vangogh500/resume/master/sample-resume.pdf">Download it!</a>
-			
-			</div>
-		</div>
-		<div class="bottom">
-			<div class="elevator">
-				<div id="speech2" class="speech-bubble">
-					Take the elevator!
-				</div>
-				<div id="speaker2" class="container">
-					<img class="elevator-button" src='./images/icons/elevator.png' height="50">
-				</div>
-			</div>
-			<div class="bottom-right">
-				<blockquote>
-					Creativity is allowing yourself to make mistakes. Art is knowing which ones to keep.
-					<cite>Scott Adams</cite>
-				</blockquote>
-				<div class="postscript">
-					Copyright &#169; Kai Matsuda 
-				</div>
-			</div>
-		</div>
-	</body>
+  <head>
+    <meta charset="utf-8">
+    <title>React Tutorial</title>
+    <!-- Not present in the tutorial. Just for basic styling. -->
+    <link rel="stylesheet" href="css/base.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+  </head>
+  <body>
+    <div id="content"></div>
+    <script type="text/babel" src="scripts/example.js"></script>
+    <script type="text/babel">
+      // To get started with this tutorial running your own code, simply remove
+      // the script tag loading scripts/example.js and start writing code here.
+    </script>
+  </body>
 </html>
