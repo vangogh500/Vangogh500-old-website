@@ -1,0 +1,158 @@
+@font-face {
+    font-family: custom-body;
+    src: url("../FiraSans-ExtraLight.otf");
+}
+
+.about-me {
+	padding: 100px 120px 50px 120px;
+	font-size: 50px;
+	overflow: auto;
+	border-spacing: 30px;
+}
+
+.about-me .left-content {
+	display:table-cell;
+	width: 50%;
+	box-sizing: border-box;
+}
+
+.about-me .right-content {
+	display:table-cell;
+	width: 50%;
+	box-sizing: border-box;
+	box-shadow: 0px 0px 6px #484848;
+	background: url("../images/profile.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.about-me .content {
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 1.5;
+	letter-spacing: 1px;
+	color: #686868;
+}
+
+.more {
+	margin: 0px 150px 130px 150px;
+	letter-spacing: 1px;
+}
+
+.more .togglebutton {
+	cursor: pointer;
+	padding: 30px 180px;
+	font-size: 38px;
+	background-color: #484D56;
+	color: #FFF;
+	border-radius: 20px;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.09), 0px 0px 2px 2px rgba(255, 255, 255, 0.5), 0px 0px 5px 5px rgba(255, 255, 255, 0.4);
+	transition: background-color 0.7s ease 0s;
+}
+
+.more .togglebutton:hover {
+	background-color: #3A3D43;
+}
+
+.more .content {
+	margin: 0px 50px;
+	padding: 50px 0px;
+	background-color: #B1AC95;
+}
+
+.more .section-header {
+	position: relative;
+}
+
+.more .timeline {
+	width: 5px;
+	height: 600px;
+	margin-left: auto;
+  	margin-right: auto;
+  	border-radius: 10px;
+  	background-color: white;
+}
+
+.resume {
+	padding: 40px 150px 100px 150px;
+	font-size: 50px;
+	overflow: auto;
+	border-spacing: 30px;
+}
+
+.resume .description {
+	margin-bottom: 40px;
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: 1px;
+	color: #686868;
+}
+
+.resume .content {
+	text-align: center;
+}
+
+.resume .shadow-top {
+    position: relative;
+    z-index: 2;
+    box-shadow: 0px 7px 8px -10px #BBB inset;
+    height: 20px;
+    margin: 40px 50px -20px 50px;
+}
+
+.resume .img {
+	margin: 0px 50px 40px 50px;
+	display: block;
+  	height: 450px;
+  	overflow: scroll;
+  	border-left: 1px solid #EEE;
+  	border-right: 1px solid #EEE;
+  	border-bottom: 1px solid #EEE;
+}
+
+.resume a {
+	text-decoration: none;
+	padding: 5px;
+	border-radius: 30px;
+	background-color: #D7D4C2;
+	color: #787878;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.09), 0px 0px 2px 2px rgba(255, 255, 255, 0.4), 0px 0px 5px 5px rgba(255, 255, 255, 0.4);
+	transition: background-color 0.7s ease 0s;
+}
+
+.resume a.download {
+	padding: 10px 20px;
+	font-size: 20px;
+}
+
+.resume a:hover {
+	background-color: #C6C3B1;
+}
+
+.resume .right-content {
+	display:table-cell;
+	vertical-align: top;
+	box-sizing: border-box;
+	font-size: 14px;
+	color: #686868;
+}
+
+.resume .right-content a {
+	text-decoration: none;
+	color: #6666FF;
+}
+.resume .right-content a:hover {
+	color: #0000EE;
+}
+
+.resume .right-content h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+.resume .right-content #readme {
+	padding: 0px;
+}
+
+.resume .right-content img {
+	display: none;
+}
