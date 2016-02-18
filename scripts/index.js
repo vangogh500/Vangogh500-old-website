@@ -1,5 +1,19 @@
 var Link = ReactRouter.Link;
 
+var About = React.createClass({
+  render: function() {
+    return (
+      <div className="col-md-9 animated fadeInLeft">
+        <div className="jumbotron">
+          <h1>About Me</h1>
+          <p>Born in 1992 in a remote part of Nagano, Japan, I soon found myself living an ordinary American life here in Massachusetts. At the age of twelve, I would discover the saxophone, embarking me on a voyage of creativity that I still sail on today. The endeavor has lead me far and wide, spending two years at New York University studying Jazz Performance, I soon found myself taking a year off; I was unsure about my goals and concerned about my future.</p>
+          <p>Through a bit of soul-searching, I landed at UMass Amherst, and it was at this time that I discovered coding. It had everything I loved about music: seemingly infinite creativity on a foundation of rudimentary logic, a mix of academia and art. So here I am now, a steadfast devotee to that of creativity, immersed in music and code.</p>
+        </div>
+      </div>
+    );
+  }
+});
+
 var Home = React.createClass({
   render: function() {
     return (
@@ -7,7 +21,7 @@ var Home = React.createClass({
         <div className="row title-section">
           <div className="col-md-1"></div>
           <div className="col-md-9">
-            <div className="jumbotron title-section">
+            <div className="jumbotron title-section animated fadeInRight">
               <h1>Vangogh500</h1>
               <h3>Kai Matsuda | 松田鹿飛</h3>
               <span><a className="btn btn-primary btn-lg social-media waves-effect waves-light" href="https://soundcloud.com/kaismatsuda" role="button"><span className="fa fa-soundcloud"></span></a></span>
@@ -22,7 +36,7 @@ var Home = React.createClass({
           <div className="col-md-9">
             <ul className="nav nav-tabs" role="tablist">
               <li className="active">
-                <Link to="/about"><span className="glyphicon glyphicon-user"></span> About</Link>
+                <Link to="/"><span className="glyphicon glyphicon-user"></span> About</Link>
               </li>
               <li>
                 <Link to="/about/education"><span className="fa fa-graduation-cap"></span> Education</Link>
@@ -55,14 +69,41 @@ var Home = React.createClass({
   }
 });
 
-var About = React.createClass({
+var App = React.createClass({
   render: function() {
     return (
-      <div className="col-md-9 animated fadeInLeft">
-        <div className="jumbotron">
-          <h1>About Me</h1>
-          <p>Born in 1992 in a remote part of Nagano, Japan, I soon found myself living an ordinary American life here in Massachusetts. At the age of twelve, I would discover the saxophone, embarking me on a voyage of creativity that I still sail on today. The endeavor has lead me far and wide, spending two years at New York University studying Jazz Performance, I soon found myself taking a year off; I was unsure about my goals and concerned about my future.</p>
-          <p>Through a bit of soul-searching, I landed at UMass Amherst, and it was at this time that I discovered coding. It had everything I loved about music: seemingly infinite creativity on a foundation of rudimentary logic, a mix of academia and art. So here I am now, a steadfast devotee to that of creativity, immersed in music and code.</p>
+      <div>
+        <nav className="navbar navbar-fixed-top navigation z-depth-1" role="navigation">
+          <div className="container">
+            <div className="navbar-header">
+              <Link to="/" className="navbar-brand waves-effect waves-light">Vangogh500.io</Link>
+            </div>
+
+            <div className="collapse navbar-collapse" id="main-navigation">
+              <ul className="nav navbar-right navbar-nav">
+                <li role="presentation" className="waves-effect waves-light">
+                  <Link to='/projects' className="waves-effect waves-light">Projects</Link>
+                </li>
+                <li><a className="waves-effect waves-light" href="#">Blog</a></li>
+                <li><a className="waves-effect waves-light" href="#">Contact</a></li>
+                <li role="presentation" className="dropdown">
+                  <a className="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="true">
+                    Social Media
+                    <span className="caret"></span>
+                  </a>
+                  <ul className="dropdown-menu">
+                    <li><a href="#"><span className="fa fa-soundcloud"></span></a></li>
+                    <li><a href="#"><span className="fa fa-github"></span></a></li>
+                    <li><a href="#"><span className="fa fa-twitter"></span></a></li>
+                    <li><a href="#"><span className="fa fa-linkedin"></span></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div>
+          {this.props.children}
         </div>
       </div>
     );
@@ -74,7 +115,7 @@ var ClassList = React.createClass({
     var classNodes = this.props.data.map(function(cls) {
       return (
         <div>
-          <a data-toggle="collapse" href={"#" + cls.id} className="collection-item">
+          <a data-toggle="collapse" href={"#" + cls.id} className="collection-item black-text">
             {cls.id} : {cls.name}
             <small className="grey-text date-label">{cls.date}</small>
             <span className="label label-warning pull-right">{cls.language}</span>
@@ -82,8 +123,6 @@ var ClassList = React.createClass({
           <div id={cls.id} className="collapse">
             <div className="panel-footer z-index-0 grey-text">
               {cls.desc}
-              <hr/>
-              Languages/Frameworks Used: {cls.language}
             </div>
           </div>
         </div>
@@ -240,33 +279,37 @@ var Skills = React.createClass({
   }
 });
 
+var EmpList = React.createClass({
+  render: function() {
+    var employmentNodes = this.props.data.map(function(emp) {
+      return (
+        <div className="card">
+            <div className="card-content">
+                <span className="card-title black-text">{emp.name}</span>
+                <span className="pull-right">{emp.position}</span>
+                <br/>
+                <small className="grey-text">{emp.date} | {emp.location}</small>
+                <hr/>
+                <p>{emp.info}</p>
+            </div>
+        </div>
+      );
+    });
+    return (
+      <div>
+        {employmentNodes}
+      </div>
+    );
+  }
+});
+
 var Employment = React.createClass({
   render: function() {
     return (
       <div className="col-md-9 animated fadeInLeft">
         <div className="jumbotron">
           <h1>Employment</h1>
-          <div className="card elegant-color">
-              <div className="card-content white-text">
-                  <span className="card-title">Milestaff Publish Co.<small className="pull-right date-label">June 2014 - Dec 2014 | Shizuoka, Japan</small></span>
-                  <hr/>
-                  <p>Translated passages and emails for a local publishing company in Shizuoka, Japan.</p>
-              </div>
-          </div>
-          <div className="card elegant-color">
-              <div className="card-content white-text">
-                  <span className="card-title">Sunrise Mart<small className="pull-right date-label">July 2013 - Dec 2013 | New York, NY</small></span>
-                  <hr/>
-                  <p>Worked as cashier and customer service rep. at a local Japanese market.</p>
-              </div>
-          </div>
-          <div className="card elegant-color">
-              <div className="card-content white-text">
-                  <span className="card-title">Maple Ridge Peony Farm<small className="pull-right date-label">May 2012 - Sep 2012 | Conway, MA</small></span>
-                  <hr/>
-                  <p>Harvested peony flowers at a local peony farm.</p>
-              </div>
-          </div>
+          <EmpList data={employment_history} />
         </div>
       </div>
     );
@@ -339,22 +382,117 @@ var TimeLine = React.createClass({
   }
 });
 
+var Projects = React.createClass({
+  render: function() {
+    return (
+      <div>
+        <div className="row title-section">
+          <div className="col-md-1"></div>
+          <div className="col-md-9">
+            <div className="jumbotron title-section animated fadeInRight">
+              <h1>Projects</h1>
+              <p>To me creativity is a balance between structure and flexibility. It is somewhat a contradiction as it requires you to build upon a strong foundation only to be set free from it.</p>
+              <span><a className="btn btn-primary btn-lg social-media waves-effect waves-light" href="https://soundcloud.com/kaismatsuda" role="button"><span className="fa fa-soundcloud"></span></a></span>
+              <span><a className="btn btn-primary btn-lg social-media waves-effect waves-light" href="https://github.com/vangogh500" role="button"><span className="fa fa-github"></span></a></span>
+            </div>
+          </div>
+        </div>
+        <div className="row content">
+          <div className="col-md-1"></div>
+          <div className="col-md-9">
+            <ul className="nav nav-tabs" role="tablist">
+              <li className="active">
+                <Link to="/projects/music"><span className="glyphicon glyphicon-music"></span> Music</Link>
+              </li>
+              <li>
+                <Link to="/projects/code"><span className="fa fa-file-code-o"></span> Software</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="row content secondary-row">
+          {this.props.children}
+        </div>
+      </div>
+    );
+  }
+});
+
+var Music = React.createClass({
+  render: function() {
+    return (
+      <div>
+        <div className="banner1 animated fadeInRight">
+        </div>
+        <div className="col-md-1"></div>
+        <div className="col-md-11 animated fadeInLeft">
+          <div className="jumbotron">
+            <h1 className="st-teal">Music</h1>
+            <hr className="part-divider"/>
+            <div className="row">
+              <div className="col-md-9">
+                {this.props.children}
+              </div>
+              <div className="col-md-3">
+                <ul className="nav nav-pills nav-stacked album-menu">
+                  <h4 className="black-text">Albums</h4>
+                  <li className="waves-effect waves-light"><a className="grey-text">Rough Draft Beats</a></li>
+                  <li className="waves-effect waves-light"><a className="grey-text">Game Music</a></li>
+                  <li className="waves-effect waves-light"><a className="grey-text">Messages</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+});
+
+var RoughDraftBeat = React.createClass({
+  render: function() {
+    return (
+      <div className="jumbotron">
+        <h4>Rough Draft Beats</h4>
+        <div className="genres">
+          <span className="badge blue">Electronic</span>
+          <span className="badge teal">Hip-Hop</span>
+          <span className="badge green">Jazz</span>
+          <span className="badge red">Pop</span>
+        </div>
+        <div className="liner-note text-muted">
+          <p>Ive always admired the accessibility of popular music; its ability to get something moving inside whether it be the simple urge to move the body. While the development of technique and complexity might be worth exploring, as it is especially done to a rigorous passion in the Jazz and Classical genres, it too often counteracts or rather sacrifices the accessibility of the music. For me showmanship can often be an ego driven aspect of the creative process, it is what I enjoy, but the true power of music, in my opinion, comes simply from its ability to comfort, to move, to captivate our listeners. While the drive for self improvement is an admirable trait, you cant forget to have a good time with everyone else.</p>
+          <p>The album and the music behind it is an attempt or an exploration of this particular admiration of mine. It gathers influence from genres such as electronic, pop, and hip-hop in their popular forms. Each piece includes a short instrumental solo inspired by my background in Jazz - an attempt to express the ego driven aspect of the creative process without sacrificing but complementing its accessibility. The album "Rough Draft Beats" refers to the endless creative process of forever-polishing a piece; instead the pieces are left rough as a recognition that none of these pieces are truly complete.</p>
+        </div>
+      </div>
+    );
+  }
+});
+
 var Router = ReactRouter.Router;
+var IndexRoute = ReactRouter.IndexRoute;
 var Route = ReactRouter.Route;
 var hashHistory = ReactRouter.hashHistory;
 
 ReactDOM.render((
   <Router history={hashHistory}>
-    <Route path="/" component={Home}>
-      <Route path="/about" component={About}/>
-      <Route path="/about/education" component={Education}/>
-      <Route path="/about/skills" component={Skills}>
-        <Route path="/about/skills/programming-languages" component={ProgrammingLanguageContainer}/>
-        <Route path="/about/skills/markup-languages" component={MarkUpLanguageContainer}/>
-        <Route path="/about/skills/other" component={OtherSkillsContainer}/>
+    <Route component={App}>
+      <Route path="/" component={Home}>
+        <IndexRoute component={About}/>
+        <Route path="/about/education" component={Education}/>
+        <Route path="/about/skills" component={Skills}>
+          <Route path="/about/skills/programming-languages" component={ProgrammingLanguageContainer}/>
+          <Route path="/about/skills/markup-languages" component={MarkUpLanguageContainer}/>
+          <Route path="/about/skills/other" component={OtherSkillsContainer}/>
+        </Route>
+        <Route path="/about/employment" component={Employment}/>
+        <Route path="/about/timeline" component={TimeLine}/>
       </Route>
-      <Route path="/about/employment" component={Employment}/>
-      <Route path="/about/timeline" component={TimeLine}/>
+      <Route path="/projects" component={Projects}>
+        <Route path="/projects/music" component={Music}>
+          <IndexRoute component={RoughDraftBeat}/>
+        </Route>
+      </Route>
     </Route>
   </Router>
 ), document.getElementById('content'));

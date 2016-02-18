@@ -19,7 +19,6 @@ var classes = [
         name: 'Mathematics',
         courses: [
           {id: 'MATH-132', date: 'Fall 2014', name: 'Calculus II', desc: 'Second course in the calculus track. Concepts include integrals, methods of integration, sequences, and Taylor series'},
-          {id: 'MATH-132', date: 'Fall 2014', name: 'Calculus II', desc: 'Second course in the calculus track. Concepts include integrals, methods of integration, sequences, and Taylor series'},
           {id: 'MATH-233', date: 'Spring 2014', name: 'Multivariate Calculus', desc: 'Calculus in 2 and 3 dimensions. Concepts include vectors, partial derivatives, and line integrals'}
         ]
       },
@@ -131,6 +130,40 @@ var foreign_languages = [
   }
 ];
 
-var employment_history = {
-
-};
+var employment_history = [
+  {
+    name: 'Milestaff Publish Co.',
+    position: 'Translator & Correspondent',
+    date: 'June 2014 - Dec 2014',
+    location: 'Shizuoka, Japan',
+    info: 'Translated passages and emails for a local publishing company in Shizuoka, Japan.'
+  },
+  {
+    name: 'Freelance Jazz Musician',
+    position: 'Saxophonist',
+    date: 'Sep 2011 - Sep 2014',
+    location: 'New York, NY',
+    info: 'Played in various venues in NYC such as Somethin\' Jazz Club, Tutuma Social Club, & Washington Square Park.'
+  },
+  {
+    name: 'Sunrise Mart',
+    position: 'Cashier',
+    date: 'July 2013 - Dec 2013',
+    location: 'New York, NY',
+    info: 'Worked as cashier and customer service rep. at a local Japanese market.'
+  },
+  {
+    name: 'Maple Ridge Peony Farm',
+    position: 'Horticulturist',
+    date: 'May 2012 - Sep 2012',
+    location: 'Conway, MA',
+    info: 'Harvested peony flowers at a local peony farm.'
+  },
+  {
+    name: 'America Reads',
+    position: 'Tutor',
+    date: 'Sep 2011 - Dec 2011',
+    location: 'New York, NY',
+    info: 'Worked with New York City public schools in order to aid students and teachers in the classroom. Taught prepared curriculum individually to a class of 20 students.'
+  }
+];
