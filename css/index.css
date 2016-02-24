@@ -285,5 +285,9 @@ body {
 }
 
 .liner-note {
-  margin-top: 40px;
+  margin-top: 20px;
+}
+
+.genres {
+  margin-bottom: 20px;
 }
