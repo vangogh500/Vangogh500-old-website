@@ -28,9 +28,7 @@ var Home = React.createClass({
               <span><a className="btn btn-primary btn-lg social-media waves-effect waves-light" href="https://github.com/vangogh500" role="button"><span className="fa fa-github"></span></a></span>
               <span><a className="btn btn-primary btn-lg social-media waves-effect waves-light" href="#" role="button"><span className="fa fa-twitter"></span></a></span>
               <span><a className="btn btn-primary btn-lg social-media waves-effect waves-light" href="https://www.linkedin.com/in/vangogh500" role="button"><span className="fa fa-linkedin"></span></a></span>
-              <br/>
-              <br/>
-              <a className="btn btn-primary btn-lg social-media waves-effect waves-light blue-grey darken-2" href="./img/resume.pdf" role="button"><span className="fa fa-file"></span>  Resume</a>
+              <a className="btn btn-primary btn-lg social-media waves-effect waves-light blue-grey darken-2 resume" href="./img/resume.pdf" role="button"><span className="fa fa-file"></span>  Resume</a>
             </div>
           </div>
         </div>
@@ -88,7 +86,7 @@ var App = React.createClass({
                   <Link to='/projects' className="waves-effect waves-light">Projects</Link>
                 </li>
                 <li><a className="waves-effect waves-light" href="#">Blog</a></li>
-                <li><a className="waves-effect waves-light" href="#">Contact</a></li>
+                <li><Link to="/contact" className="waves-effect waves-light">Contact</Link></li>
               </ul>
             </div>
           </div>
@@ -487,6 +485,33 @@ var Software = React.createClass({
   }
 });
 
+var Contact = React.createClass({
+  render: function() {
+    return (
+      <div>
+        <div className="row title-section">
+          <div className="col-md-1"></div>
+          <div className="col-md-9">
+            <div className="jumbotron title-section animated fadeInRight">
+              <h1>Contact</h1>
+              <span><a className="btn btn-primary btn-lg social-media waves-effect waves-light" href="https://soundcloud.com/kaismatsuda" role="button"><span className="fa fa-soundcloud"></span></a></span>
+              <span><a className="btn btn-primary btn-lg social-media waves-effect waves-light" href="https://github.com/vangogh500" role="button"><span className="fa fa-github"></span></a></span>
+              <span><a className="btn btn-primary btn-lg social-media waves-effect waves-light" href="#" role="button"><span className="fa fa-twitter"></span></a></span>
+              <span><a className="btn btn-primary btn-lg social-media waves-effect waves-light" href="https://www.linkedin.com/in/vangogh500" role="button"><span className="fa fa-linkedin"></span></a></span>
+            </div>
+          </div>
+        </div>
+        <div className="row content">
+          <div className="col-md-1"></div>
+          <div className="col-md-9">
+            <h6 className="text-muted">Feel free to contact me via any of my social media accounts or at <a href="mailto:kmatsuda@umass.edu">kmatsuda@umass.edu</a>.</h6>
+          </div>
+        </div>
+      </div>
+    );
+  }
+});
+
 var Router = ReactRouter.Router;
 var IndexRoute = ReactRouter.IndexRoute;
 var Route = ReactRouter.Route;
@@ -513,6 +538,7 @@ ReactDOM.render((
         <Route path="/projects/software" component={Software}>
         </Route>
       </Route>
+      <Route path="/Contact" component={Contact} />
     </Route>
   </Router>
 ), document.getElementById('content'));
