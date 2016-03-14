@@ -28,6 +28,9 @@ var Home = React.createClass({
               <span><a className="btn btn-primary btn-lg social-media waves-effect waves-light" href="https://github.com/vangogh500" role="button"><span className="fa fa-github"></span></a></span>
               <span><a className="btn btn-primary btn-lg social-media waves-effect waves-light" href="#" role="button"><span className="fa fa-twitter"></span></a></span>
               <span><a className="btn btn-primary btn-lg social-media waves-effect waves-light" href="https://www.linkedin.com/in/vangogh500" role="button"><span className="fa fa-linkedin"></span></a></span>
+              <br/>
+              <br/>
+              <a className="btn btn-primary btn-lg social-media waves-effect waves-light blue-grey darken-2" href="./img/resume.pdf" role="button"><span className="fa fa-file"></span>  Resume</a>
             </div>
           </div>
         </div>
@@ -86,18 +89,6 @@ var App = React.createClass({
                 </li>
                 <li><a className="waves-effect waves-light" href="#">Blog</a></li>
                 <li><a className="waves-effect waves-light" href="#">Contact</a></li>
-                <li role="presentation" className="dropdown">
-                  <a className="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="true">
-                    Social Media
-                    <span className="caret"></span>
-                  </a>
-                  <ul className="dropdown-menu">
-                    <li><a href="#"><span className="fa fa-soundcloud"></span></a></li>
-                    <li><a href="#"><span className="fa fa-github"></span></a></li>
-                    <li><a href="#"><span className="fa fa-twitter"></span></a></li>
-                    <li><a href="#"><span className="fa fa-linkedin"></span></a></li>
-                  </ul>
-                </li>
               </ul>
             </div>
           </div>
@@ -405,7 +396,7 @@ var Projects = React.createClass({
                 <Link to="/projects/music"><span className="glyphicon glyphicon-music"></span> Music</Link>
               </li>
               <li>
-                <Link to="/projects/code"><span className="fa fa-file-code-o"></span> Software</Link>
+                <Link to="/projects/software"><span className="fa fa-file-code-o"></span> Software</Link>
               </li>
             </ul>
           </div>
@@ -437,8 +428,8 @@ var Music = React.createClass({
                 <ul className="nav nav-pills nav-stacked album-menu">
                   <h4 className="black-text">Albums</h4>
                   <li className="waves-effect waves-light"><a className="grey-text">Rough Draft Beats</a></li>
-                  <li className="waves-effect waves-light"><a className="grey-text">Game Music</a></li>
-                  <li className="waves-effect waves-light"><a className="grey-text">Messages</a></li>
+                  <li className="waves-effect waves-light"><a className="grey-text">Game Music (in prog)</a></li>
+                  <li className="waves-effect waves-light"><a className="grey-text">Messages (in prog)</a></li>
                 </ul>
               </div>
             </div>
@@ -463,10 +454,33 @@ var RoughDraftBeat = React.createClass({
           <span className="badge green">Jazz</span>
           <span className="badge red">Pop</span>
         </div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL6RENvAK7R4pfNP5NHDB9Gq9KRM7hfBHt&amp;controls=0;autoplay=1" frameborder="0" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL6RENvAK7R4pfNP5NHDB9Gq9KRM7hfBHt&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>
         <div className="liner-note text-muted">
           <p>Ive always admired the accessibility of popular music; its ability to get something moving inside whether it be the simple urge to move the body. While the development of technique and complexity might be worth exploring, as it is especially done to a rigorous passion in the Jazz and Classical genres, it too often counteracts or rather sacrifices the accessibility of the music. For me showmanship can often be an ego driven aspect of the creative process, it is what I enjoy, but the true power of music, in my opinion, comes simply from its ability to comfort, to move, to captivate our listeners. While the drive for self improvement is an admirable trait, you cant forget to have a good time with everyone else.</p>
           <p>The album and the music behind it is an attempt or an exploration of this particular admiration of mine. It gathers influence from genres such as electronic, pop, and hip-hop in their popular forms. Each piece includes a short instrumental solo inspired by my background in Jazz - an attempt to express the ego driven aspect of the creative process without sacrificing but complementing its accessibility. The album "Rough Draft Beats" refers to the endless creative process of forever-polishing a piece; instead the pieces are left rough as a recognition that none of these pieces are truly complete.</p>
+        </div>
+      </div>
+    );
+  }
+});
+
+var Software = React.createClass({
+  render: function() {
+    return (
+      <div>
+        <div className="banner1 animated fadeInRight">
+        </div>
+        <div className="col-md-1"></div>
+        <div className="col-md-11 animated fadeInLeft">
+          <div className="jumbotron">
+            <h1 className="st-teal">Software</h1>
+            <hr className="part-divider"/>
+            <div className="row">
+              <div className="col-md-9">
+                {this.props.children}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -495,6 +509,8 @@ ReactDOM.render((
       <Route path="/projects" component={Projects}>
         <Route path="/projects/music" component={Music}>
           <IndexRoute component={RoughDraftBeat}/>
+        </Route>
+        <Route path="/projects/software" component={Software}>
         </Route>
       </Route>
     </Route>
